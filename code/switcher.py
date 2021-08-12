@@ -312,8 +312,8 @@ class Actions:
 def gui(gui: imgui.GUI):
     gui.text("Names of running applications")
     gui.line()
-    for line in ctx.lists["self.running"]:
-        gui.text(line)
+    for k, line in ctx.lists["self.running"].items():
+        gui.text('Verbal name:' + k + '. Process name: ' + line)
 
 
 def update_launch_list():
@@ -335,7 +335,12 @@ def update_launch_list():
             # name = path.rsplit("\\")[-1].split(".")[0].lower()
             if "install" not in name:
                 launch[name] = name
-
+    elif talon.app.platform == 'linux':
+        launch = {
+            'firefox': 'firefox',
+            'keypass': 'keepassx',
+            'slack': 'slack'
+        }
     ctx.lists["self.launch"] = actions.user.create_spoken_forms_from_map(
         launch, words_to_exclude
     )
