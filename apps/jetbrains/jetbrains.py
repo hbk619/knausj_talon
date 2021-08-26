@@ -104,8 +104,9 @@ def idea_commands(commands):
     global extendCommands
     extendCommands = command_list
     for cmd in command_list:
-        if cmd:
-            send_idea_command(cmd.strip())
+        stripped_command = cmd.strip()
+        if stripped_command:
+            send_idea_command(stripped_command)
             time.sleep(0.1)
 
 
