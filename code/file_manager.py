@@ -341,13 +341,12 @@ def update_lists(path=None):
         is_valid_path = False
 
     if is_valid_path:
-        # print("valid..." + str(current_path))
         try:
             directories = get_directory_map(current_path)
             files = get_file_map(current_path)
-        except:
-            # print("invalid path...")
-
+        except Exception as e:
+            print("invalid path...")
+            print(e)
             directories = {}
             files = {}
 
