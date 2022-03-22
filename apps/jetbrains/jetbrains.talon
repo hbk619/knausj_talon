@@ -241,7 +241,7 @@ refactor last <user.text> [over]: user.idea("find prev {text}, action Refactorin
 refactor next <user.text> [over]: user.idea("find next {text}, action Refactorings.QuickListPopupAction")
 replace last <user.text> [over]: user.idea("find prev {text}, action EditorPaste")
 replace next <user.text> [over]: user.idea("find next {text}, action EditorPaste")
-select last <user.text> [over]: user.idea("find prev {text}")
+select previous <user.text> [over]: user.idea("find prev {text}")
 select next <user.text> [over]: user.idea("find next {text}")
 
 select camel left: user.extend_camel_left()
