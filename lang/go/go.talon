@@ -32,7 +32,7 @@ method <user.text> [over]:
 state var: "var "
 variable [<user.text>] [over]:
     insert("var ")
-    insert(user.formatted_text(text, "PRIVATE_CAMEL_CASE"))
+    insert(user.formatted_text("{text}", "PRIVATE_CAMEL_CASE"))
     # insert(" ")
     sleep(100ms)
 
