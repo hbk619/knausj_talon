@@ -160,7 +160,7 @@ class Actions:
         """ Releases any held mouse buttons """
         buttons_held_down = list(ctrl.mouse_buttons_down())
         for button in buttons_held_down:
-            ctrl.mouse_click(button=button, up=True)
+            ctrl.mouse_click(button=button-2, up=True)
 
     def mouse_sleep():
         """Disables control mouse, zoom mouse, and re-enables cursor"""
