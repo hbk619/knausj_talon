@@ -4,6 +4,7 @@ ctx.matches = r"""
 os: linux
 app: Firefox
 app: firefox
+app: firefox-aurora
 """
 
 @ctx.action_class('app')

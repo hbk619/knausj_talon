@@ -19,6 +19,7 @@ and app.bundle: org.mozilla.firefox
 
 ctx.matches = r"""
 app: firefox
+app: firefox-aurora
 """
 
 @ctx.action_class('browser')

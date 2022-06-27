@@ -1,4 +1,5 @@
 app: firefox
+app: firefox-aurora
 -
 tag(): browser
 tag(): user.tabs
