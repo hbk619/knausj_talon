@@ -1,4 +1,5 @@
 app: firefox
+app: firefox-aurora
 -
 tag(): browser
 tag(): user.tabs
@@ -9,4 +10,3 @@ tab search <user.text>$:
     browser.focus_address()
     insert("% {text}")
     key(down)
-    

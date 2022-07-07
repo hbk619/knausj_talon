@@ -67,9 +67,9 @@ class EditActions:
         actions.key('ctrl-end')
     def file_start():
         actions.key('ctrl-home')
-    def find(text: str=None):
+    def find(text: str=""):
         actions.key('ctrl-f')
-        actions.actions.insert(text)
+        actions.insert(text)
     def find_next():
         actions.key('f3')
         #action(edit.find_previous):
@@ -85,8 +85,6 @@ class EditActions:
         actions.key('down home')
     def line_end():
         actions.key('end')
-    def line_insert_down():
-        actions.key('end enter')
     def line_insert_up():
         actions.key('home enter up')
     def line_start():
@@ -118,6 +116,7 @@ class EditActions:
     def select_all():
         actions.key('ctrl-a')
     def select_line(n: int=None):
+        if n is not None: actions.edit.jump_line(n)
         actions.key('end shift-home')
         #action(edit.select_lines(a: int, b: int)):
     def select_none():
@@ -125,12 +124,9 @@ class EditActions:
         #action(edit.select_paragraph):
         #action(edit.select_sentence):
     def select_word():
-        actions.key('ctrl-left ctrl-shift-right')
-        #action(edit.selected_text): -> str
-        #action(edit.sentence_end):
-        #action(edit.sentence_next):
-        #action(edit.sentence_previous):
-        #action(edit.sentence_start):
+        actions.edit.right()
+        actions.edit.word_left()
+        actions.edit.extend_word_right()
     def undo():
         actions.key('ctrl-z')
     def up():

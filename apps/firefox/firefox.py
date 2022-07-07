@@ -4,6 +4,7 @@ ctx = Context()
 mod = Module()
 apps = mod.apps
 apps.firefox = "app.name: Firefox"
+apps.firefox = "app.name: Firefox Developer Edition"
 apps.firefox = "app.name: firefox"
 apps.firefox = """
 os: windows
@@ -18,6 +19,7 @@ and app.bundle: org.mozilla.firefox
 
 ctx.matches = r"""
 app: firefox
+app: firefox-aurora
 """
 
 @ctx.action_class('browser')
@@ -29,9 +31,8 @@ class BrowserActions:
         actions.browser.focus_address()
         actions.sleep("50ms")
         actions.insert(url)
-        actions.key("enter")    
+        actions.key("enter")
     def focus_search():
         actions.browser.focus_address()
     def submit_form():
         actions.key('enter')
-

@@ -84,8 +84,6 @@ class EditActions:
         actions.key('down home')
     def line_end():
         actions.key('cmd-right')
-    def line_insert_down():
-        actions.key('end enter')
     def line_insert_up():
         actions.key('cmd-left enter up')
     def line_start():
@@ -118,6 +116,7 @@ class EditActions:
     def select_all():
         actions.key('cmd-a')
     def select_line(n: int=None):
+        if n is not None: actions.edit.jump_line(n)
         actions.key('cmd-right cmd-shift-left')
         #action(edit.select_lines(a: int, b: int)):
     def select_none():
@@ -128,11 +127,6 @@ class EditActions:
         actions.edit.right()
         actions.edit.word_left()
         actions.edit.extend_word_right()
-        #action(edit.selected_text): -> str
-        #action(edit.sentence_end):
-        #action(edit.sentence_next):
-        #action(edit.sentence_previous):
-        #action(edit.sentence_start):
     def undo():
         actions.key('cmd-z')
     def up():
