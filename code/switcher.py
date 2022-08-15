@@ -348,7 +348,14 @@ def update_launch_list():
         launch = {
             'firefox': 'firefox',
             'keypass': 'keepassx',
-            'slack': 'slack'
+            'slack': 'slack',
+            'rubymine': 'rubymine',
+            'goland': 'goland',
+            'pycharm': 'pycharm',
+            'sublime': 'sublime',
+            'obsidian': 'obsidian',
+            'spotify': 'spotify',
+            'terminal': 'terminal'
         }
 
     ctx.lists["self.launch"] = actions.user.create_spoken_forms_from_map(
