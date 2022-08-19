@@ -348,7 +348,14 @@ def update_launch_list():
         launch = {
             'firefox': 'firefox',
             'keypass': 'keepassx',
-            'slack': 'slack'
+            'slack': 'slack',
+            'rubymine': 'rubymine',
+            'goland': 'goland',
+            'pycharm': 'pycharm',
+            'sublime': 'sublime',
+            'obsidian': 'obsidian',
+            'spotify': 'spotify',
+            'terminal': 'terminal'
         }
     elif talon.app.platform == 'linux':
         launch = {
