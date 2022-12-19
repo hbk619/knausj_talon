@@ -400,7 +400,10 @@ def refresh_context_command_map(enabled_only=False):
                 local_context_command_map[context_name] = {}
                 for command_alias, val in context.commands.items():
                     if command_alias in registry.commands or not enabled_only:
-                        local_context_command_map[context_name][
+                        context_key = context_name
+                        if display_name in local_display_name_to_context_name_map:
+                            context_key = local_display_name_to_context_name_map[display_name]
+                        local_context_command_map[context_key][
                             str(val.rule.rule)
                         ] = val.target.code
                 if len(local_context_command_map[context_name]) == 0:
